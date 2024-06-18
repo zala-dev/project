@@ -5,6 +5,7 @@
 
 :root {
   --color-primary: #ff7151;
+  --color-primary-dark: #dc5a3d;
   --color-secondary: #164c64;
   --color-white: #f5f5f5;
   --hero-heading-size: 4.8rem;
@@ -24,10 +25,23 @@ html {
   box-sizing: inherit;
 }
 
+/* body {
+  
+ 
+  flex-direction: column;
+
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5)),
+    rgba(0, 0, 0, 0.2) url("../images/landing-page.jpg") no-repeat center/cover;
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-white);
+} */
+
 body {
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
+  width: 100vw;
 
   background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5)),
     rgba(0, 0, 0, 0.2) url("../images/landing-page.jpg") no-repeat center/cover;
@@ -47,7 +61,7 @@ a {
 
 .navbar {
   position: fixed;
-  min-width: 40rem;
+  min-width: 90vw;
   background-color: var(--color-primary);
   top: 3%;
   left: 50%;
@@ -76,12 +90,20 @@ a {
 }
 
 .navbar .nav-list li {
-  margin-right: 1.25rem;
+  /* margin-right: 1.25rem; */
+  padding-bottom: 0.25rem;
+  border-bottom: 0.1rem dotted var(--color-white);
   transition: 0.3s ease;
+}
+
+.navbar .nav-list span {
+  margin: 0 1.25rem;
+  color: var(--color-secondary);
 }
 
 .navbar .nav-list li:hover {
   color: var(--color-secondary);
+  border-bottom: 0.01rem solid var(--color-secondary);
 }
 
 /* Hero Page */

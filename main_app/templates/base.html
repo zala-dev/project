@@ -29,13 +29,17 @@
     <ul class="nav-list">
       {% if user.is_authenticated %}
       <li><a href="{% url 'event_create' %}">Organize Event</a></li>
+      <span>|</span>
       <li>
         <a href="{% url 'event_list' %}">Your Events</a>
       </li>
+      <span>|</span>
       <li>
         <a href="{% url 'my_events' %}">Your Volunteering</a>
       </li>
+      <span>|</span>
       <li><a href="{% url 'all_events' %}">All Events</a></li>
+      <span>|</span>
       <li>
         <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none">
           {% csrf_token %}
@@ -44,6 +48,7 @@
       </li>
       {% else %}
       <li><a href="{% url 'signup' %}">Sign Up</a></li>
+      <span>|</span>
       <li><a href="{% url 'login' %}">Log In</a></li>
       {% endif %}
     </ul>

@@ -84,8 +84,7 @@ class AllVolunteeringEventsListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
-        liked_events = set(user.like_set.values_list('event_id', flat=True)) if user.is_authenticated else set()
-        context['liked_events'] = liked_events
+        context['liked_events'] = set(user.like_set.values_list('event_id', flat=True)) if user.is_authenticated else set()
         return context
 
 class VolunteeringEventDetailView(LoginRequiredMixin, DetailView):

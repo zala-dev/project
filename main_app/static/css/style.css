@@ -1,37 +1,82 @@
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-  main {
-    flex: 1 0 auto;
-  }
-  
-  footer.page-footer {
-    padding-top: 0;
-    text-align: center;
-    background-color: rgb(102,181,142)
-  }
+/* Web Fonts - Changa One and DM Sans */
+@import url("https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
-  nav {
-    background-color: rgb(102,181,142)
-  }
+/* CSS variables */
 
-#withdraw, #unlike {
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
+:root {
+  --color-primary: #ff7151;
+  --color-secondary: #164c64;
+  --color-white: #f5f5f5;
+  --hero-heading-size: 4.8rem;
+  --hero-subheading-size: 2.4rem;
+  --font-primary: "Changa One", sans-serif;
+  --font-secondary: "DM Sans", sans-serif;
 }
 
-#volunteer, #like {
-  background-color: green;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  background: url("../images/landing-page.jpg") no-repeat center/cover;
+
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  position: fixed;
+  min-width: 40rem;
+  background-color: var(--color-primary);
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -2%);
+
+  border-radius: 5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2.25rem 1.75rem;
+}
+
+.navbar .nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+
+  font-size: 2rem;
+  text-transform: uppercase;
+  /* gap: 2rem; */
+}
+
+.navbar .nav-list li {
+  margin-right: 1.25rem;
+  transition: 0.3s ease;
+}
+
+.navbar .nav-list li:hover {
+  color: var(--color-secondary);
 }

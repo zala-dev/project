@@ -29,7 +29,8 @@ body {
   min-height: 100vh;
   flex-direction: column;
 
-  background: url("../images/landing-page.jpg") no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    rgba(0, 0, 0, 0.2) url("../images/landing-page.jpg") no-repeat center/cover;
 
   font-family: var(--font-secondary);
   font-size: 1.6rem;
@@ -42,13 +43,15 @@ a {
   color: inherit;
 }
 
+/* Navbar */
+
 .navbar {
   position: fixed;
   min-width: 40rem;
   background-color: var(--color-primary);
-  top: 2%;
+  top: 3%;
   left: 50%;
-  transform: translate(-50%, -2%);
+  transform: translate(-50%, -3%);
 
   border-radius: 5rem;
 
@@ -79,4 +82,34 @@ a {
 
 .navbar .nav-list li:hover {
   color: var(--color-secondary);
+}
+
+/* Hero Page */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+
+  text-align: center;
+}
+
+.hero-heading {
+  font-family: var(--font-primary);
+  font-size: 9rem;
+  line-height: 1.8;
+  letter-spacing: 0.2rem;
+}
+
+.hero-subheading {
+  font-size: 4.4rem;
+  width: 60%;
+  font-weight: 400;
+  line-height: 1.5;
 }

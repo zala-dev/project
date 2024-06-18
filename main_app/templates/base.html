@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Community Volunteering</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <header class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="{% url 'home' %}" class="left brand-logo"
+                >&nbsp;&nbsp;Community Volunteering</a
+              >
+            </li>
+          </ul>
+          <ul class="right">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'event_create' %}">Organize Event</a></li>
+            <li>
+              <a href="{% url 'event_list' %}">Your Events</a>
+            </li>
+            <li>
+              <a href="{% url 'my_events' %}">Your Volunteering</a>
+            </li>
+            <li><a href="{% url 'all_events' %}">All Events</a></li>
+            <li>
+              <form
+                id="logout-form"
+                action="{% url 'logout' %}"
+                method="POST"
+                style="display: none"
+              >
+                {% csrf_token %}
+              </form>
+              <a
+                href="#"
+                onclick="document.getElementById('logout-form').submit();"
+                >Logout</a
+              >
+            </li>
+            {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container">{% block content %} {% endblock %}</main>
+    <footer class="page-footer">GA SEI 2024</footer>
+  </body>
+</html>

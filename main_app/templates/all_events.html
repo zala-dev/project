@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block content %}
+<h2>All Volunteering Events</h2>
+
+{% for event in events %}
+
+<div class="row">
+  <div class="col s6 col-offset-3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ event.title }}</span>
+        <p>Description: {{ event.description }}</p>
+        <p>Date: {{ event.date }}</p>
+        <p>Time: {{ event.time }}</p>
+        <p>Location: {{ event.location }}</p>
+        <p>Organizer: {{ event.organizer }}</p>
+        <p>Likes: {{ event.like_set.count }}</p>
+        <p>Volunteers Needed: {{ event.volunteers_needed }}</p>
+        <p>No of Volunteers: {{ event.volunteer_count }}</p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'volunteering_event_detail' event.id %}">View</a>
+        <br /> <br />
+        {% if event.id in liked_events %}
+        <a href="{% url 'unlike_event' event.id %}">
+          <button id="unlike" type="button">Unlike</button>
+        </a>
+        {% else %}
+        <a href="{% url 'like_event' event.id %}">
+          <button id="like" type="button">Like</button>
+        </a>
+        {% endif %}
+        <br /> <br />
+        {% if user in event.volunteers.all %}
+        <form action="{% url 'withdraw_volunteer' event.id %}" method="post">
+          {% csrf_token %}
+          <button id="withdraw" type="submit">Withdraw as Volunteer</button>
+        </form>
+        {% else %}
+        <form action="{% url 'add_volunteer' event.id %}" method="post">
+          {% csrf_token %}
+          <button id="volunteer" type="submit">Volunteer for Event</button>
+        </form>
+      </div>
+      {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% empty %}
+<li>No events yet</li>
+{% endfor %} {% endblock %}

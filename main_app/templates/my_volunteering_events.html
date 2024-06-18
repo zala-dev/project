@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+<h2>All My Volunteering Events</h2>
+
+{% for event in my_events %}
+
+<div class="row">
+  <div class="col s6 col-offset-3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ event.title }}</span>
+        <p>Date: {{ event.date }}</p>
+        <p>Time: {{ event.time }}</p>
+        <p>Location: {{ event.location }}</p>
+        <p>Organizer: {{ event.organizer }}</p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'volunteering_event_detail' event.id %}">View</a>
+        <br />
+        <br />
+        {% if user in event.volunteers.all %}
+        <form action="{% url 'withdraw_volunteer' event.id %}" method="post">
+          {% csrf_token %}
+          <button id="withdraw" type="submit">Withdraw as Volunteer</button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% empty %}
+<li>No events yet</li>
+{% endfor %} {% endblock %}

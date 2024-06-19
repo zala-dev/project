@@ -34,6 +34,8 @@ body {
   background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5)),
     rgba(0, 0, 0, 0.2) url("../images/landing-page.jpg") no-repeat center/cover;
 
+  backdrop-filter: blur(0.15rem);
+
   font-family: var(--font-secondary);
   font-size: 1.6rem;
   line-height: 1.6;
@@ -96,7 +98,7 @@ ul {
 
 .navbar .nav-list span {
   margin: 0 1.25rem;
-  color: var(--color-secondary);
+  color: var(--color-white);
 }
 
 .navbar .nav-list li:hover {
@@ -128,11 +130,13 @@ ul {
 }
 
 .hero-subheading {
-  font-size: 4.4rem;
+  font-family: var(--font-secondary);
+  font-size: 4rem;
   width: 90%;
   font-weight: 400;
   line-height: 1.5;
   border-bottom: none;
+  letter-spacing: 0.2rem;
 }
 
 /* main container */

@@ -1,14 +1,17 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Delete Event</h1>
+<div class="delete-event">
 
-<h4>
-  Are you sure you want to delete
-  <span class="teal-text">{{ object.title }}</span>?
-</h4>
+  <h1>Delete Event</h1>
+  <h4>
+    Are you sure you want to delete
+    <span>
+      {{ object.title }}</span>?
+  </h4>
 
-<form action="" method="POST">
-  {% csrf_token %}
-  <input type="submit" value="Yes - Delete!" class="btn" />
-  <a href="{% url 'event_detail' object.id %}">&nbsp;&nbsp;Cancel</a>
-</form>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes - Delete!" class="btn btn-delete" />
+    <a class="btn btn-cancel" href="{% url 'event_detail' object.id %}">Cancel</a>
+  </form>
+</div>
 {% endblock %}

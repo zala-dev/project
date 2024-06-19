@@ -147,10 +147,11 @@ ul {
   align-items: flex-start;
 }
 
-/* user registration: log in & sign up page */
+/* user registration: log in, sign up page and delete event */
 
 .login,
-.sign-up {
+.sign-up,
+.delete-event {
   margin-top: 1vh;
   display: flex;
   flex-direction: column;
@@ -168,14 +169,21 @@ ul {
 }
 
 .login h1,
-.sign-up h1 {
+.sign-up h1,
+.delete-event h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
 
+.delete-event h4 {
+  font-size: 2.25rem;
+  text-align: center;
+}
+
 .login form,
-.sign-up form {
+.sign-up form,
+.delete-event form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,7 +222,8 @@ ul {
 }
 
 .login form .btn,
-.sign-up form .btn {
+.sign-up form .btn,
+.delete-event form .btn {
   margin: 2rem 0;
   padding: 1rem 2rem;
   font-size: 1.75rem;
@@ -224,6 +233,13 @@ ul {
   border-radius: 0.5rem;
   cursor: pointer;
   transition: 0.3s ease;
+}
+
+.delete-event .btn.btn-cancel {
+  background: var(--color-white);
+  color: var(--color-dark);
+  padding: 0.5rem 2rem;
+  margin-top: -0.25rem;
 }
 
 .login form .btn:hover,

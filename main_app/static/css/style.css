@@ -34,6 +34,8 @@ body {
   background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5)),
     rgba(0, 0, 0, 0.2) url("../images/landing-page.jpg") no-repeat center/cover;
 
+  -webkit-backdrop-filter: blur(0.15rem);
+
   backdrop-filter: blur(0.15rem);
 
   font-family: var(--font-secondary);
@@ -87,7 +89,6 @@ ul {
 
   font-size: 2rem;
   text-transform: uppercase;
-  /* gap: 2rem; */
 }
 
 .navbar .nav-list li {
@@ -151,7 +152,7 @@ ul {
   align-items: flex-start;
 }
 
-/* user registration: log in, sign up page and delete event */
+/* user registration: log in, sign up page, event form and delete event */
 
 .login,
 .sign-up,
@@ -168,8 +169,8 @@ ul {
   background: rgba(255, 255, 255, 0.25);
   border-radius: 1rem;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
   color: var(--color-white);
 }
 
@@ -304,8 +305,8 @@ ul {
   background: rgba(255, 255, 255, 0.35);
   border-radius: 1rem;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
   color: var(--color-white);
 }
 
@@ -358,11 +359,3 @@ ul {
   text-transform: uppercase;
   cursor: pointer;
 }
-
-/* Media Queries */
-/* @media screen and (min-width: 1000px) {
-  .container,
-  .navbar {
-    min-width: 95rem;
-  }
-} */

@@ -155,7 +155,8 @@ ul {
 
 .login,
 .sign-up,
-.delete-event {
+.delete-event,
+.event-form {
   margin-top: 1vh;
   display: flex;
   flex-direction: column;
@@ -174,7 +175,8 @@ ul {
 
 .login h1,
 .sign-up h1,
-.delete-event h1 {
+.delete-event h1,
+.event-form h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -187,7 +189,8 @@ ul {
 
 .login form,
 .sign-up form,
-.delete-event form {
+.delete-event form,
+.event-form form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,13 +199,15 @@ ul {
 }
 
 .login form p,
-.sign-up form p {
+.sign-up form p,
+.event-form p {
   width: 100%;
   margin-bottom: 1.5rem;
 }
 
 .login form label,
-.sign-up form label {
+.sign-up form label,
+.event-form form label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
@@ -211,7 +216,8 @@ ul {
 .login form input[type="text"],
 .login form input[type="password"],
 .sign-up form input[type="text"],
-.sign-up form input[type="password"] {
+.sign-up form input[type="password"],
+.event-form form input {
   width: 100%;
   padding: 1rem;
   border: 0.1rem solid var(--color-white);
@@ -221,13 +227,15 @@ ul {
 }
 
 .login form input[type="hidden"],
-.sign-up form input[type="hidden"] {
+.sign-up form input[type="hidden"],
+.event-form form input[type="hidden"] {
   display: none;
 }
 
 .login form .btn,
 .sign-up form .btn,
-.delete-event form .btn {
+.delete-event form .btn,
+.event-form form .btn {
   margin: 2rem 0;
   padding: 1rem 2rem;
   font-size: 1.75rem;
@@ -263,13 +271,15 @@ ul {
 }
 
 .sign-up .red-text {
-  background: red;
-  display: block;
-  padding: 1rem 2rem;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: 0.25rem solid var(--color-primary);
+  padding: 0.25rem;
   width: 100%;
   text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
 }
 
 /* all events page  */
@@ -289,8 +299,9 @@ ul {
 
 .events-container .card {
   display: flex;
+  justify-content: space-between;
   gap: 3rem;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.35);
   border-radius: 1rem;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
@@ -301,6 +312,7 @@ ul {
 .events-container .card .card-content {
   display: flex;
   flex-direction: column;
+  flex: 3;
   padding: 1.5rem;
   gap: 1.5rem;
 }
@@ -320,6 +332,7 @@ ul {
   background-color: #dc5a3d;
   display: flex;
   flex-direction: column;
+  flex: 1;
   align-items: center;
   gap: 2rem;
   font-size: 2rem;

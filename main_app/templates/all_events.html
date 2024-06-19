@@ -54,13 +54,12 @@
         {% csrf_token %}
         <button id="volunteer" type="submit">Volunteer</button>
       </form>
+      {% endif %}
     </div>
-    {% endif %}
   </div>
-
 
   {% empty %}
   <li>No events yet</li>
-</div>
+
 </div>
 {% endfor %} {% endblock %}

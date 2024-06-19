@@ -8,6 +8,7 @@
   --color-primary-dark: #dc5a3d;
   --color-secondary: #164c64;
   --color-white: #f5f5f5;
+  --color-dark: #111;
   --hero-heading-size: 4.8rem;
   --hero-subheading-size: 2.4rem;
   --font-primary: "Changa One", sans-serif;
@@ -134,7 +135,7 @@ ul {
   border-bottom: none;
 }
 
-/* Log In Page */
+/* main container */
 
 .container {
   margin-top: 14vh;
@@ -146,7 +147,10 @@ ul {
   align-items: flex-start;
 }
 
-.login {
+/* user registration: log in & sign up page */
+
+.login,
+.sign-up {
   margin-top: 1vh;
   display: flex;
   flex-direction: column;
@@ -155,7 +159,7 @@ ul {
   min-width: 40rem;
   max-width: 45rem;
   padding: 3rem 3rem 1rem 3rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 1rem;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
@@ -163,13 +167,15 @@ ul {
   color: var(--color-white);
 }
 
-.login h1 {
+.login h1,
+.sign-up h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
 
-.login form {
+.login form,
+.sign-up form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,31 +183,38 @@ ul {
   max-width: 36rem;
 }
 
-.login form p {
+.login form p,
+.sign-up form p {
   width: 100%;
   margin-bottom: 1.5rem;
 }
 
-.login form label {
+.login form label,
+.sign-up form label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
 .login form input[type="text"],
-.login form input[type="password"] {
+.login form input[type="password"],
+.sign-up form input[type="text"],
+.sign-up form input[type="password"] {
   width: 100%;
   padding: 1rem;
   border: 0.1rem solid var(--color-white);
   border-radius: 0.5rem;
   box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 
-.login form input[type="hidden"] {
+.login form input[type="hidden"],
+.sign-up form input[type="hidden"] {
   display: none;
 }
 
-.login form .btn {
+.login form .btn,
+.sign-up form .btn {
   margin: 2rem 0;
   padding: 1rem 2rem;
   font-size: 1.75rem;
@@ -213,11 +226,33 @@ ul {
   transition: 0.3s ease;
 }
 
-.login form .btn:hover {
+.login form .btn:hover,
+.sign-up form .btn:hover {
   background-color: var(--color-primary-dark);
 }
 
-/* Event List  */
+.sign-up form p span,
+.sign-up form li {
+  color: var(--color-dark);
+  font-weight: bold;
+}
+
+.sign-up form ul {
+  list-style: disc;
+  margin-left: 2rem;
+}
+
+.sign-up .red-text {
+  background: red;
+  display: block;
+  padding: 1rem 2rem;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* all events page  */
 
 .events-container {
   display: flex;
